@@ -1,0 +1,39 @@
+<form [formGroup]="bankform" (ngSubmit)="bankDetails()" class="border p-5 rounded-2">
+    <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <h1 class="fs-3">BANK DETAILS</h1>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="accountnum" class="form-label">ACCOUNT NUMBER</label>
+        <input type="text" class="form-control" id="accountnum" formControlName="accountnum">
+        <div class="form-text text-danger" *ngIf="AccNum.errors?.['minlength'] && (AccNum.touched || AccNum.dirty)">
+            Account Number must be between 10 to 18 digit
+        </div>
+        <div class="form-text text-danger" *ngIf="AccNum.errors?.['maxlength'] && (AccNum.touched || AccNum.dirty)">
+            Account Number must be between 10 to 18 digit
+    </div><hr>
+    <div class="row mb-3">
+        <label for="holdername" class="form-label">HOLDER NAME</label>
+        <input type="text" class="form-control" id="holdername" formControlName="holdername">
+    </div><hr>
+    <div class="row mb-3">
+        <label for="ifsc" class="form-label">IFSC_CODE</label>
+        <input type="text" class="form-control" id="ifsc" formControlName="ifsc">
+        </div>
+        <div class="form-text text-danger" *ngIf="IFSC.errors?.['pattern'] && (IFSC.touched || IFSC.dirty)">
+            Please enter a valid IFSC Code
+        </div>
+    </div><hr>
+    <div class="row mb-3">
+        <label for="farmeremail" class="form-label">FARMER EMAIL</label>
+        <input type="email" class="form-control" id="farmeremail" formControlName="farmeremail">
+        <div class="form-text text-danger" *ngIf="FarmerEmail.errors?.['email'] && (FarmerEmail.touched || FarmerEmail.dirty)">
+            Please enter a valid email address
+        </div>
+    </div><hr>
+    <div class="submit-button">
+        <button type="submit">UPDATE</button>
+    </div>
+    
+</form> 

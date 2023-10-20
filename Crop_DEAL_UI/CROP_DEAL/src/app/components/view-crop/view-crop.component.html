@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Table with 6 Columns</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center" id="title">CROPS</h1>
+
+        <table class="table table-custom">
+            <thead id="tablehead">
+                <tr>
+                    <th>Crop Name</th>
+                    <th>Crop Type</th>
+                    <th>Available Qantity</th>
+                    <th>Price Per Kg</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="tablebody">
+                <tr *ngFor="let item of CropList">
+                    <th>{{ item.cropName }}</th>
+                    <td>{{ item.crop_Type }}</td>
+                    <td>{{ item.quatity.toFixed(1)}}</td>
+                    <td>{{ item.pricePerKg }}</td>
+                    <td>{{ item.cropLocation }}</td>
+                    <td *ngIf="Adminclaim() || Farmerclaim()" >
+                      <button class="btn btn-danger btn-small"(click)="deletecrop(item.cropId)">Delete</button>
+                      </td>
+                    <td  *ngIf="Dealerclaim()">
+                    <form [formGroup]="buyCropForm" (ngSubmit)="buycrop(item.cropId)" >
+                        <input type="float" class="form-control" id="cropquantity" formControlName="cropquantity">
+                        <div class="form-text text-danger" *ngIf="CropQuantity.errors?.['required'] && (CropQuantity.touched || CropQuantity.dirty)">
+                            Enter crop quantity in KG
+                        </div>
+                        <div class="submit-button">
+                            <button type="submit" id="buybutton" class="btn btn-sucess" [disabled]="buyCropForm.invalid">BUY</button>
+                        </div>
+                      </form>
+                      <button id="subbutton" class="btn btn-sucess" (click)="subcrop(item.cropName)">SUBSCRIBE</button>
+                    </td>
+                  </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

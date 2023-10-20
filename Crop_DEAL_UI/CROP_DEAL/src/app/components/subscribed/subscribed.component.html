@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Table with 6 Columns</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center" id="title">SUBSCRIBED CROPS</h1>
+        <table id="tablestyle" title="SUBSCRIBED CROPS">
+            <tr id="tablehead">
+                <td>CROP NAME</td>
+                <td>ACTION</td>
+            </tr>
+            <tr *ngFor="let item of SubscribedCrops">
+                <td class="name">{{item.cropName}}</td>
+                <td class="actionbtn"><button class="btn btn-danger btn-small" (click)="deletesub(item.cropName)">UnSubscribe</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+

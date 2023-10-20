@@ -1,0 +1,46 @@
+<form [formGroup]="editForm" (ngSubmit)="editUser()" class="border p-5 rounded-2">
+    <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <h1 class="fs-3">EDIT PROFILE</h1>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="username" class="form-label">Name</label>
+        <input type="text" class="form-control" id="username" formControlName="username">
+        <div class="form-text text-danger" *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">
+            Please enter your name
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="phoneNo" class="form-label">Phone Number</label>
+        <input type="text" class="form-control" id="phoneNo" formControlName="phoneNo">
+        <div class="form-text text-danger" *ngIf="PhoneNo.errors?.['required'] && (PhoneNo.touched || PhoneNo.dirty)">
+            Please enter your Phone Number
+        </div>
+        <div class="form-text text-danger" *ngIf="PhoneNo.errors?.['minlength'] && (PhoneNo.touched || PhoneNo.dirty)">
+            Mobile Number should be of 10 digits
+        </div>
+        <div class="form-text text-danger" *ngIf="PhoneNo.errors?.['maxlength'] && (PhoneNo.touched || PhoneNo.dirty)">
+            Mobile Number should be of 10 digits
+        </div>
+        <div class="form-text text-danger" *ngIf="PhoneNo.errors?.['pattern'] && (PhoneNo.touched || PhoneNo.dirty)">
+            Please enter a valid Phone Number
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="password" class="form-label">Enter New Password</label>
+        <input type="password" class="form-control" id="password" formControlName="pass">
+        <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">
+            Please enter password
+        </div>
+        <div class="form-text text-danger" *ngIf="Password.errors?.['minlength'] && (Password.touched || Password.dirty)">
+            Password should be between 6 to 10 digits
+        </div>
+        <div class="form-text text-danger" *ngIf="Password.errors?.['maxlength'] && (Password.touched || Password.dirty)">
+            Password should be between 6 to 10 digits
+        </div>
+    </div>
+    <div class="submit-button">
+        <button type="submit">UPDATE</button>
+    </div>
+</form>

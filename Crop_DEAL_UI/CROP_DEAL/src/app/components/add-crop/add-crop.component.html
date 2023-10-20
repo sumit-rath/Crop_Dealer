@@ -1,0 +1,47 @@
+<form [formGroup]="addCropForm" (ngSubmit)="AddCrop()" class="border p-5 rounded-2">
+    <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <h1 class="fs-3">ADD CROP</h1>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="cropname" class="form-label">Crop Name</label>
+        <input type="text" class="form-control" id="cropname" formControlName="cropname">
+        <div class="form-text text-danger" *ngIf="CropName.errors?.['required'] && (CropName.touched || CropName.dirty)">
+            Please enter crop name
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="croptype" class="form-label">Crop Type</label>
+        <input type="text" class="form-control" id="croptype" formControlName="croptype">
+        <div class="form-text text-danger" *ngIf="CropType.errors?.['required'] && (CropType.touched || CropType.dirty)">
+            Please enter crop type
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="cropquantity" class="form-label">Quantity in KG</label>
+        <input type="float" class="form-control" id="cropquantity" formControlName="cropquantity">
+        <div class="form-text text-danger" *ngIf="CropQuantity.errors?.['required'] && (CropQuantity.touched || CropQuantity.dirty)">
+            Please crop quantity in KG
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="cropPrice" class="form-label">Crop Price Per KG</label>
+        <input type="float" class="form-control" id="cropPrice" formControlName="cropPrice">
+        <div class="form-text text-danger" *ngIf="CropPrice.errors?.['required'] && (CropPrice.touched || CropPrice.dirty)">
+            Please enter crop price
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="croplocation" class="form-label">Crop Location</label>
+        <input type="text" class="form-control" id="croplocation" formControlName="croplocation">
+        <div class="form-text text-danger" *ngIf="CropLocation.errors?.['required'] && (CropLocation.touched || CropLocation.dirty)">
+            Please enter crop location
+        </div>
+    </div>
+    
+    <div class="submit-button">
+        <button type="submit" [disabled]="addCropForm.invalid">UPLOAD</button>
+    </div>
+    <p class="text-center fs-3" [ngClass]="isAccountLogin? 'text-success pb-1':'text-danger pb-1'">{{displayMsg}}</p>
+</form>

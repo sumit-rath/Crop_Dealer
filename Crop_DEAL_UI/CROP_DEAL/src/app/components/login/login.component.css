@@ -1,0 +1,30 @@
+form{
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 450px;
+    margin: auto;
+}
+button{
+    border:none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    background-image: linear-gradient(45deg, #ace143, #219393);
+    width: 172px;
+    height: 35px;
+    margin-top: 10px;
+    border-radius: 4px;
+    transition: 0.7s ease;
+  }
+  .submit-button{
+    display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  #roletype{
+    align-items: left;
+    background-color: rgba(8, 225, 200, 0.397);
+    text-align: center;
+    font-weight: bold;
+  }

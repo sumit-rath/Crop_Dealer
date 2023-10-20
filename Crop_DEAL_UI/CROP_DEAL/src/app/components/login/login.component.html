@@ -1,0 +1,35 @@
+<p class="text-center fs-3" [ngClass]="isAccountLogin? 'text-success pb-1':'text-danger pb-1'">{{displayMsg}}</p>
+<form [formGroup]="LoginForm" (ngSubmit)="Auth()" class="border p-5 rounded-2">
+    <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <h1 class="fs-3">LOGIN</h1>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="emailid" class="form-label">USER EMAIL</label>
+        <input type="email" class="form-control" id="emailid" formControlName="emailid">
+        <div class="form-text text-danger" *ngIf="EmailId.errors?.['required'] && (EmailId.touched || EmailId.dirty)">
+            Please enter your Email Id
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="passkey" class="form-label">PASSWORD</label>
+        <input type="password" class="form-control" id="passkey" formControlName="passkey">
+        <div class="form-text text-danger" *ngIf="PassKey.errors?.['required'] && (PassKey.touched || PassKey.dirty)">
+            Please enter your Password
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label id="roletype">
+          <input type="radio" id="farmerrole" value="farmer" formControlName="role"> Farmer
+          <input type="radio" id="dealerrole" value="dealer" formControlName="role"> Dealer
+          <input type="radio" id="adminrole" value="admin" formControlName="role"> Admin
+        </label> 
+        <div class="form-text text-danger" *ngIf="Role.errors?.['required'] && (Role.touched || Role.dirty)">
+            Select Role
+        </div>                  
+    </div>
+    <div class="submit-button">
+        <button type="submit" [disabled]="LoginForm.invalid">Login</button>
+    </div>
+</form>

@@ -1,0 +1,32 @@
+.icon-link {
+    text-align: center;
+    text-decoration: none;
+    color: #000000dc;
+}
+
+.icon-link i {
+    display: block;
+    margin: 10px auto;
+}
+
+.icon-link p {
+    font-size: 26px;
+    margin-top: 5px;
+    color: black;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+}
+
+.icon-link:hover {
+    background-color: #f8f9fa;
+}
+.farmerIcon{
+    width: 100%; /* Set the width of your box */
+    height: auto; /* Set the height of your box */
+    background-image:linear-gradient(0deg, #bbc0a5, #97f66e49); /* Set a background color for the box */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
