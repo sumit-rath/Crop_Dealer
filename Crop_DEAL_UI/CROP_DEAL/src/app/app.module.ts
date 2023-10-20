@@ -23,6 +23,8 @@ import { DealerService } from './services/dealer.service';
 import { EditprofileComponent } from './components/editprofile/editprofile.component';
 import { DealerpageComponent } from './components/dealerpage/dealerpage.component';
 import { SubscribedComponent } from './components/subscribed/subscribed.component';
+import { ViewfarmerComponent } from './components/viewfarmer/viewfarmer.component';
+import { ViewdealerComponent } from './components/viewdealer/viewdealer.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { SubscribedComponent } from './components/subscribed/subscribed.componen
     EditprofileComponent,
     DealerpageComponent,
     SubscribedComponent,
+    ViewfarmerComponent,
+    ViewdealerComponent,
   ],
   imports: [
     BrowserModule,

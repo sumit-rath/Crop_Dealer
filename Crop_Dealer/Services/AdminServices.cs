@@ -13,10 +13,11 @@ namespace Crop_Dealer.Services
         IDeleteFarmer deleteFarmer;
         IDeleteBankDetails deletebankdetails;
         IInvoiceRepo invoiceRepo;
-       
-        public AdminServices(IInvoiceRepo invoiceRepo, IAllFarmer allFarmer, IAllDealer allDealer, IDeleteDealer deleteDealer,
+        IAdminRepo adminRepo;
+        public AdminServices(IInvoiceRepo invoiceRepo, IAdminRepo adminRepo ,IAllFarmer allFarmer, IAllDealer allDealer, IDeleteDealer deleteDealer,
             IDeleteFarmer deleteFarmer, IDeleteBankDetails deletebankdetails)
         {
+            this.adminRepo= adminRepo;
             this.invoiceRepo = invoiceRepo;
             this.allFarmer = allFarmer;
             this.allDealer = allDealer;
@@ -42,21 +43,21 @@ namespace Crop_Dealer.Services
         #region ViewFarmers
         public List<Farmer> AllFarmersService()
         {
-            List<Farmer> result = allFarmer.GetAllFarmers();
+            List<Farmer> result = adminRepo.GetAllFarmers();
             return result;
         }
         #endregion
         #region ViewDealers
         public List<Dealer> AllDealersService()
         {
-            List<Dealer> result = allDealer.GetAllDealers();
+            List<Dealer> result = adminRepo.GetAllDealers();
             return result;
         }
         #endregion
         #region DeleteFarmers
         public string DeleteFarmersService(int id)
         {
-            string result = deleteFarmer.Deletefarmer(id);
+            string result = adminRepo.Deletefarmer(id);
             return result;
         }
         #endregion
@@ -64,14 +65,7 @@ namespace Crop_Dealer.Services
         
         public string DeleteDealersService(int id)
         {
-            string result = deleteDealer.DeleteDealer(id);
-            return result;
-        }
-        #endregion
-        #region Delete Bank Details
-        public string DeleteBankService(int id)
-        {
-            string result = deletebankdetails.deleteBankdetail(id);
+            string result = adminRepo.DeleteDealer(id);
             return result;
         }
         #endregion

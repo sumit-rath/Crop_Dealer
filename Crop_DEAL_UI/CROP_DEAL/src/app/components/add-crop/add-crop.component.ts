@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Crop } from 'src/app/model/Crop';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { CropService } from 'src/app/services/crop.service';
 import { FarmerService } from 'src/app/services/farmer.service';
 
@@ -11,7 +12,7 @@ import { FarmerService } from 'src/app/services/farmer.service';
   styleUrls: ['./add-crop.component.css']
 })
 export class AddCropComponent {
-constructor(private cropservice:CropService,private router:Router){}
+constructor(private cropservice:CropService,private router:Router,private authservice:AuthenticationService){}
   displayMsg:string='';
   farmeremail:string='default';
   isAccountLogin:boolean=false;
@@ -55,9 +56,8 @@ constructor(private cropservice:CropService,private router:Router){}
     ]).subscribe(res=>{
       if(res=="Crop Added Successfully")
       {
-        this.isAccountLogin=true;
-        this.displayMsg=res;
-        this.router.navigateByUrl('farmerpage');
+        alert(res);
+        location.reload();
       }
       else{
         alert(res);

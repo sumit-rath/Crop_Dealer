@@ -89,7 +89,7 @@ LoginForm=new FormGroup({
           const result=JSON.parse(res);
           this.authservice.setAdminToken(result.token);
           alert("Login Successful");
-          this.router.navigateByUrl('viewInvoiceAdmin');
+          this.router.navigateByUrl('adminpage');
         }
       },
       (error) => {

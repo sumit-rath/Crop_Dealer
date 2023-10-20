@@ -46,7 +46,7 @@ namespace Crop_Dealer.Repository
                 emailMessage.To.Add(new MailAddress(email));
                 emailMessage.From = new MailAddress(emailSettings["FromAddress"]);
                 emailMessage.Subject = subject;
-                emailMessage.Body = $"Successfull Transaction\nInvoice Id: {invoice.InvoiceId}\r\n-------------------------------------------- " +
+                emailMessage.Body = $"Successfull Transaction\n"+
                     $"Amount: {invoice.Amount}\r\n--------------------------------------------" +
                     $"Crop Qty: {quantity}\r\n--------------------------------------------" +
                     $"Date & Time: {invoice.Date}\r\n--------------------------------------------" +

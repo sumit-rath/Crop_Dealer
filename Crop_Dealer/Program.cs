@@ -16,8 +16,6 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<CropDealContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection")));
 #region dependency
 //repository dependency
-
-
 builder.Services.AddScoped<ISendEmail, SendEmail>();
 builder.Services.AddScoped<IAllDealer, AllDealer>();
 builder.Services.AddScoped<IAllFarmer, AllFarmer>();
@@ -29,6 +27,8 @@ builder.Services.AddScoped<IFarmerRepo, FarmerRepo>();
 builder.Services.AddScoped<ILogin_Reg, Login_Reg>();
 builder.Services.AddScoped<IInvoiceRepo, InvoiceRepo>();
 builder.Services.AddScoped<ICropRepository,CropRepository>();
+builder.Services.AddScoped<IAdminRepo,AdminRepo>();
+
 //services dependency
 builder.Services.AddScoped<AdminServices,AdminServices>();
 builder.Services.AddScoped<AuthenticationServices,AuthenticationServices>();

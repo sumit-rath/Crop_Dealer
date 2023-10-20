@@ -14,6 +14,9 @@ import { InvoiceComponent } from './components/invoice/invoice.component';
 import { EditprofileComponent } from './components/editprofile/editprofile.component';
 import { DealerpageComponent } from './components/dealerpage/dealerpage.component';
 import { SubscribedComponent } from './components/subscribed/subscribed.component';
+import { AdminpageComponent } from './components/adminpage/adminpage.component';
+import { ViewfarmerComponent } from './components/viewfarmer/viewfarmer.component';
+import { ViewdealerComponent } from './components/viewdealer/viewdealer.component';
 
 const routes: Routes = [
   {
@@ -106,6 +109,21 @@ const routes: Routes = [
     path:'unsubscribe',
     component:SubscribedComponent,
     canActivate:[authDealerGuard]
+  },
+  {
+    path:'adminpage',
+    component:AdminpageComponent,
+    canActivate:[authAdminGuard]
+  },
+  {
+    path:'viewfarmeradmin',
+    component:ViewfarmerComponent,
+    canActivate:[authAdminGuard]
+  },
+  {
+    path:'viewdealeradmin',
+    component:ViewdealerComponent,
+    canActivate:[authAdminGuard]
   },
   {
     path:'**',

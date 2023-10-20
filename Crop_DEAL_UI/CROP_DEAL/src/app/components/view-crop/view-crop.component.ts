@@ -9,7 +9,7 @@ import { CropService } from 'src/app/services/crop.service';
   templateUrl: './view-crop.component.html',
   styleUrls: ['./view-crop.component.css']
 })
-export class ViewCropComponent implements OnInit {
+export class ViewCropComponent{
 CropList:any[]=[];
 Invoice:any[]=[];
 buyCropForm=new FormGroup({

@@ -88,7 +88,7 @@ namespace Crop_Dealer.Controllers
                 return Ok(result);
             }
             _logger.LogError("Not able to delete farmer");
-            return BadRequest(result);
+            return Content(result);
         }
         #endregion
         #region DeleteDealers
@@ -102,21 +102,7 @@ namespace Crop_Dealer.Controllers
                 return Ok(result);
             }
             _logger.LogError("Not able to delete dealer");
-            return BadRequest(result);
-        }
-        #endregion
-        #region Delete Bank Details
-        [HttpDelete("Delete_Bank_Details")]
-        public IActionResult DeleteBank(int id)
-        {
-            string result = _adminServices.DeleteBankService(id);
-            if (result == "Deleted Successfully")
-            {
-                _logger.LogInformation($"{result}");
-                return Ok(result);
-            }
-            _logger.LogError("Not able to delete bank details");
-            return BadRequest(result);
+            return Content(result);
         }
         #endregion
     }
