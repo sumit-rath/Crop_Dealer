@@ -1,6 +1,5 @@
 ﻿using Crop_Dealer.Model;
 using Crop_Dealer.Repository;
-using Crop_Dealer.Repository.AdminUser;
 using Microsoft.Extensions.Configuration;
 
 namespace Crop_Dealer.Services

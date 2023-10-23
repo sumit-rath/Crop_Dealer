@@ -1,6 +1,5 @@
 using Crop_Dealer.Model;
 using Crop_Dealer.Repository;
-using Crop_Dealer.Repository.AdminUser;
 using Crop_Dealer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -17,11 +16,6 @@ builder.Services.AddDbContext<CropDealContext>(options => options.UseSqlServer(b
 #region dependency
 //repository dependency
 builder.Services.AddScoped<ISendEmail, SendEmail>();
-builder.Services.AddScoped<IAllDealer, AllDealer>();
-builder.Services.AddScoped<IAllFarmer, AllFarmer>();
-builder.Services.AddScoped<IDeleteFarmer, Deletefarmers>();
-builder.Services.AddScoped<IDeleteDealer, Deletedealer>();
-builder.Services.AddScoped<IDeleteBankDetails,DeleteBankDetails>();
 builder.Services.AddScoped<IDealerRepo, DealerRepo>();
 builder.Services.AddScoped<IFarmerRepo, FarmerRepo>();
 builder.Services.AddScoped<ILogin_Reg, Login_Reg>();

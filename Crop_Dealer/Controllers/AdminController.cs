@@ -1,5 +1,4 @@
 ﻿using Crop_Dealer.Model;
-using Crop_Dealer.Repository.AdminUser;
 using Crop_Dealer.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;

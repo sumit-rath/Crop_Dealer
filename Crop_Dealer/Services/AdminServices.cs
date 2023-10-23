@@ -1,29 +1,18 @@
 ﻿using Crop_Dealer.Model;
 using Crop_Dealer.Repository;
-using Crop_Dealer.Repository.AdminUser;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Crop_Dealer.Services
 {
     public class AdminServices
     {
-        IAllFarmer allFarmer;
-        IAllDealer allDealer;
-        IDeleteDealer deleteDealer;
-        IDeleteFarmer deleteFarmer;
-        IDeleteBankDetails deletebankdetails;
+
         IInvoiceRepo invoiceRepo;
         IAdminRepo adminRepo;
-        public AdminServices(IInvoiceRepo invoiceRepo, IAdminRepo adminRepo ,IAllFarmer allFarmer, IAllDealer allDealer, IDeleteDealer deleteDealer,
-            IDeleteFarmer deleteFarmer, IDeleteBankDetails deletebankdetails)
+        public AdminServices(IInvoiceRepo invoiceRepo, IAdminRepo adminRepo )
         {
             this.adminRepo= adminRepo;
             this.invoiceRepo = invoiceRepo;
-            this.allFarmer = allFarmer;
-            this.allDealer = allDealer;
-            this.deleteDealer = deleteDealer;
-            this.deleteFarmer = deleteFarmer;
-            this.deletebankdetails = deletebankdetails;
         }
 
         #region InvoiceAll
